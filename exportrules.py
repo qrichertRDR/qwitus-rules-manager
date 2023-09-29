@@ -29,7 +29,7 @@ def _open_database_connection() -> Tuple[connection, RealDictCursor]:
 
 
 def _fetch_rules(cur: RealDictCursor) -> Generator[RealDictRow, None, None]:
-    cur.execute(f"SELECT name, short_name, type_, algorithm FROM rule_engine")
+    cur.execute(r"SELECT name, short_name, type_, algorithm FROM rule_engine")
     for rule in cur:
         yield rule
 
